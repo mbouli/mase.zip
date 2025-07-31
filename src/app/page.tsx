@@ -118,7 +118,7 @@ export default function Home() {
         </div>
 
         <footer className="fixed bottom-10 left-0 right-0 z-5 w-full text-black text-center">
-          <p className="text-sm text-black link">© mason boulier</p>
+          <p className="text-sm text-black link">© mason boulier // room125 v0.1</p>
         </footer>
       </section >
     </>
