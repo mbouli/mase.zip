@@ -19,7 +19,7 @@ export default function Loader() {
                     onAnimationComplete={() => setDone(true)}
                     className="fixed inset-0 z-50 bg-[#FF3D49] text-white flex items-center justify-center"
                 >
-                    <StaggeredLink>opening ROOM125...</StaggeredLink>
+                    <TextStagger>opening ROOM125...</TextStagger>
                 </motion.div>
             )}
         </AnimatePresence>
@@ -29,7 +29,7 @@ export default function Loader() {
 const DURATION = 0.3;
 const STAGGER = 0.45;
 
-const StaggeredLink = ({ children }: { children: string; }) => {
+const TextStagger = ({ children }: { children: string; }) => {
     return (
         <motion.a
             initial="inital"
