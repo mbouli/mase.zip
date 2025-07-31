@@ -84,7 +84,7 @@ export default function Home() {
 
   return (
     <>
-      <Loader />
+      {/* <Loader /> */}
       <section
         ref={containerRef}
         className="relative h-screen w-full overflow-hidden bg-white flex flex-col items-center justify-center text-black"

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, easeInOut } from 'framer-motion'
 
 export default function Loader() {
     const [done, setDone] = useState(false);
@@ -19,20 +19,21 @@ export default function Loader() {
                     onAnimationComplete={() => setDone(true)}
                     className="fixed inset-0 z-50 bg-[#FF3D49] text-white flex items-center justify-center"
                 >
-                    <div className="relative h-[1.75em] overflow-hidden">
-                        <motion.h1
-                            initial={{ y: '100%', opacity: 0 }}
+                    <motion.h1
+                        className="link relative block overflow-hidden whitespace-nowrap uppercase">
+                        <motion.div
+                            initial={{ y: '100%', opacity: 1 }}
                             animate={{ y: '0%', opacity: 1 }}
                             transition={{
                                 delay: 0.05,
-                                duration: 0.3,
-                                ease: [0.25, 1, 0.5, 1],
+                                duration: 0.25,
+                                ease: easeInOut
                             }}
                             className="leading-[1.2em] text-2xl link tracking-wide"
                         >
                             opening ROOM125...
-                        </motion.h1>
-                    </div>
+                        </motion.div>
+                    </motion.h1>
                 </motion.div>
             )}
         </AnimatePresence>

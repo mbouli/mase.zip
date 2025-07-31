@@ -33,12 +33,10 @@ body {
   font-family: 'PPNM-Regular';
   letter-spacing: .02em;
   -webkit-font-smoothing: antialiased;
-  font-feature-settings: "palt";
 }
 
 .link {
   letter-spacing: .02em;
   font-family: 'PPNM-Medium';
   -webkit-font-smoothing: antialiased;
-  font-feature-settings: "palt";
 }

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
     return (
@@ -9,10 +9,68 @@ const Navbar = () => {
                 <p className="text-xs md:text-sm">Mason Boulier's Photo Archive</p>
             </div>
 
-            <div className="space-x-8 text-xs md:text-sm">
-                <Link href="mailto:mbouli@gmail.com" className="link hover:underline">CONTACT</Link>
+            <div className="space-x-8 text-base md:text-sm hidden md:block">
+                <StaggeredLink href="https://masonboulier.com">DEV&nbsp;WORK</StaggeredLink>
+                <StaggeredLink href="mailto:mbouli@gmail.com">CONTACT</StaggeredLink>
             </div>
         </nav>
+    )
+}
+
+const DURATION = 0.25;
+const STAGGER = 0.025;
+
+const StaggeredLink = ({ children, href, className }: { children: string; href: string; className?: string }) => {
+    return (
+        <motion.a
+            initial="inital"
+            whileHover="hovered"
+            className="relative link inline-block overflow-hidden whitespace-nowrap uppercase antialiased"
+            href={href}
+            style={{
+                lineHeight: 1,
+                letterSpacing: '.03em'
+            }}
+        >
+            <div>
+                {children.split("").map((letter, i) => {
+                    return <motion.span
+                        variants={{
+                            inital: { y: 0 },
+                            hovered: { y: '-100%' }
+                        }}
+                        transition={{
+                            duration: DURATION,
+                            ease: 'easeInOut',
+                            delay: STAGGER * i
+                        }}
+                        className="inline-block antialiased"
+                        key={i}
+                    >
+                        {letter}
+                    </motion.span>
+                })}
+            </div>
+            <div className="absolute inset-0">
+                {children.split("").map((letter, i) => {
+                    return <motion.span
+                        variants={{
+                            inital: { y: '100%' },
+                            hovered: { y: 0 }
+                        }}
+                        transition={{
+                            duration: DURATION,
+                            ease: 'easeInOut',
+                            delay: STAGGER * i
+                        }}
+                        className="inline-block antialiased"
+                        key={i}
+                    >
+                        {letter}
+                    </motion.span>
+                })}
+            </div>
+        </motion.a>
     )
 }
 
