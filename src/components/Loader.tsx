@@ -12,8 +12,8 @@ export default function Loader() {
                     initial={{ y: 0 }}
                     animate={{ y: '100%' }}
                     transition={{
-                        delay: 1.75,
-                        duration: 0.75,
+                        delay: 1.5,
+                        duration: 0.6,
                         ease: [0.895, 0.03, 0.685, 0.22], // EASE IN QUART
                     }}
                     onAnimationComplete={() => setDone(true)}
