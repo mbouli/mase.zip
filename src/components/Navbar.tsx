@@ -25,10 +25,10 @@ const StaggeredLink = ({ children, href, className }: { children: string; href: 
         <motion.a
             initial="inital"
             whileHover="hovered"
-            className="relative link inline-block overflow-hidden whitespace-nowrap uppercase"
+            className="relative link inline-block overflow-hidden whitespace-nowrap lowercase"
             href={href}
             style={{
-                lineHeight: 1,
+                lineHeight: 0.96,
                 letterSpacing: '.03em'
             }}
         >
