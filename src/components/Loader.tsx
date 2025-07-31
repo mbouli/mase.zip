@@ -19,23 +19,78 @@ export default function Loader() {
                     onAnimationComplete={() => setDone(true)}
                     className="fixed inset-0 z-50 bg-[#FF3D49] text-white flex items-center justify-center"
                 >
-                    <motion.h1
-                        className="link relative block overflow-hidden whitespace-nowrap uppercase">
-                        <motion.div
-                            initial={{ y: '100%', opacity: 1 }}
-                            animate={{ y: '0%', opacity: 1 }}
-                            transition={{
-                                delay: 0.05,
-                                duration: 0.25,
-                                ease: easeInOut
-                            }}
-                            className="leading-[1.2em] text-2xl link tracking-wide"
-                        >
-                            opening ROOM125...
-                        </motion.div>
-                    </motion.h1>
+                    <StaggeredLink>opening ROOM125...</StaggeredLink>
                 </motion.div>
             )}
         </AnimatePresence>
+    )
+}
+
+const DURATION = 0.3;
+const STAGGER = 0.45;
+
+const StaggeredLink = ({ children }: { children: string; }) => {
+    return (
+        <motion.a
+            initial="inital"
+            animate="hovered"
+            transition={{
+                delay: 0,
+                duration: 0.25,
+                ease: easeInOut
+            }}
+            className="relative link inline-block overflow-hidden uppercase text-2xl tracking-wide"
+            style={{
+                lineHeight: 1,
+                letterSpacing: '.03em'
+            }}
+        >
+            <div>
+                {children.split(" ").map((word, i) => {
+                    return (
+                        <span key={i}>
+                            <motion.span
+                                variants={{
+                                    inital: { y: 0 },
+                                    hovered: { y: '-100%' }
+                                }}
+                                transition={{
+                                    duration: DURATION,
+                                    ease: 'easeInOut',
+                                    delay: STAGGER * i
+                                }}
+                                className="inline-block antialiased invisible"
+                            >
+                                {word}
+                            </motion.span>
+                            {i < children.split(" ").length - 1 && " "}
+                        </span>
+                    )
+                })}
+            </div>
+            <div className="absolute inset-0">
+                {children.split(" ").map((word, i) => {
+                    return (
+                        <span key={i}>
+                            <motion.span
+                                variants={{
+                                    inital: { y: '100%' },
+                                    hovered: { y: 0 }
+                                }}
+                                transition={{
+                                    duration: DURATION,
+                                    ease: 'easeInOut',
+                                    delay: STAGGER * i
+                                }}
+                                className="inline-block antialiased"
+                            >
+                                {word}
+                            </motion.span>
+                            {i < children.split(" ").length - 1 && " "}
+                        </span>
+                    )
+                })}
+            </div>
+        </motion.a>
     )
 }
