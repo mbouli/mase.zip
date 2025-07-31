@@ -10,7 +10,8 @@ const Navbar = () => {
             </div>
 
             <div className="space-x-8 text-base md:text-sm hidden md:block">
-                <StaggeredLink href="https://masonboulier.com">DEV&nbsp;WORK</StaggeredLink>
+                {/* <StaggeredLink href="https://masonboulier.com">DEV&nbsp;WORK</StaggeredLink> */}
+                <StaggeredLink href="https://github.com/mbouli">DEV&nbsp;WORK</StaggeredLink>
                 <StaggeredLink href="mailto:mbouli@gmail.com">CONTACT</StaggeredLink>
             </div>
         </nav>
