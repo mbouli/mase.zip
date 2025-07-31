@@ -40,3 +40,7 @@ body {
   font-family: 'PPNM-Medium';
   -webkit-font-smoothing: antialiased;
 }
+
+.italic {
+  font-family: 'Italic';
+}
