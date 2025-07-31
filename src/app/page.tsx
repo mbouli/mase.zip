@@ -6,7 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Loader from '@/components/Loader';
 import ProgressBar from '@/components/ProgressBar'
 import Navbar from '@/components/Navbar'
-import { images } from '@/components/ProgressBar';
+import { images } from '@/util/images';
 
 gsap.registerPlugin(ScrollTrigger)
 
