@@ -30,7 +30,7 @@ const StaggeredLink = ({ children, href, className }: { children: string; href: 
             className="relative link inline-block overflow-hidden whitespace-nowrap lowercase"
             href={href}
             style={{
-                lineHeight: 0.92,
+                lineHeight: 0.85,
                 letterSpacing: '.03em'
             }}
         >
