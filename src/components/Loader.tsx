@@ -26,7 +26,7 @@ export default function Loader() {
     )
 }
 
-const DURATION = 0.3;
+const DURATION = 0.35;
 const STAGGER = 0.45;
 
 const TextStagger = ({ children }: { children: string; }) => {
@@ -35,8 +35,8 @@ const TextStagger = ({ children }: { children: string; }) => {
             initial="inital"
             animate="hovered"
             transition={{
-                delay: 0,
-                duration: 0.25,
+                delay: 0.5,
+                duration: 0.75,
                 ease: easeInOut
             }}
             className="relative link inline-block overflow-hidden uppercase text-2xl tracking-wide"
