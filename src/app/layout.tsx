@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ROOM125",
-  description: "ROOM125 by Mason Boulier",
+  title: "MASE.ZIP",
+  description: "Mason Boulier's photography archive",
 };
 
 export default function RootLayout({
