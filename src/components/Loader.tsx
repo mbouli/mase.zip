@@ -19,7 +19,7 @@ export default function Loader() {
                     onAnimationComplete={() => setDone(true)}
                     className="fixed inset-0 z-50 bg-[#be89ff] text-white flex items-center justify-center"
                 >
-                    <TextStagger>opening ROOM125...</TextStagger>
+                    <TextStagger>opening mase.zip</TextStagger>
                 </motion.div>
             )}
         </AnimatePresence>
