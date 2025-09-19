@@ -7,7 +7,7 @@ const Navbar = () => {
         <nav className="fixed px-9 py-2 top-5 left-0 right-0 z-20 w-full flex justify-between items-center text-lg font-bold text-black">
             <div className="flex items-center gap-2 md:gap-1">
                 <Image src="/logo/logo.png" alt="mase.zip" width={200} height={50} />
-                <p className="text-xs hidden md:block md:text-sm">Mason Boulier's Photo Archive</p>
+                <p className="text-xs hidden md:block md:text-sm">Mason Boulier&apos;s Photo Archive</p>
             </div>
             <div className="space-x-4 md:space-x-8 text-base md:text-sm text-black">
                 {/* <StaggeredLink href="https://masonboulier.com">DEV&nbsp;WORK</StaggeredLink> */}
