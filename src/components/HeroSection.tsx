@@ -4,6 +4,7 @@ import ProgressBar from '@/components/ProgressBar'
 import { useRef, useEffect, useState } from 'react'
 import { images } from '@/util/images';
 import { gsap } from 'gsap';
+import Image from 'next/image';
 
 const HeroSection = () => {
     const containerRef = useRef<HTMLDivElement | null>(null)
@@ -236,13 +237,16 @@ const HeroSection = () => {
                         onMouseLeave={handleMouseUp}
                     >
                         {images.map((src, i) => (
-                            <img
+                            <Image
                                 key={i}
                                 src={src}
                                 alt={`Travel photo ${i + 1}`}
-                                className="h-[60vh] w-auto object-cover"
-                                draggable={false}
-                                loading={i < 3 ? 'eager' : 'lazy'}
+                                width={400}
+                                height={600}
+                                className="h-[60vh] w-auto object-cover flex-shrink-0"
+                                priority={i < 3}
+                                quality={85}
+                                sizes="(max-width: 768px) 50vw, 33vw"
                                 style={{
                                     transform: 'translateZ(0)',
                                     backfaceVisibility: 'hidden',
