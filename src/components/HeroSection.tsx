@@ -237,26 +237,31 @@ const HeroSection = () => {
                         onMouseLeave={handleMouseUp}
                     >
                         {images.map((src, i) => (
-                            <Image
+                            <div
                                 key={i}
-                                src={src}
-                                alt={`Travel photo ${i + 1}`}
-                                width={400}
-                                height={600}
-                                className="h-[60vh] w-auto object-cover flex-shrink-0"
-                                priority={i < 3}
-                                quality={85}
-                                sizes="(max-width: 768px) 50vw, 33vw"
+                                className="relative flex-shrink-0"
                                 style={{
+                                    width: '300px',
+                                    height: '60vh',
                                     transform: 'translateZ(0)',
                                     backfaceVisibility: 'hidden',
                                 }}
-                            />
+                            >
+                                <Image
+                                    src={src}
+                                    alt={`Travel photo ${i + 1}`}
+                                    fill
+                                    className="object-cover"
+                                    priority={i < 3}
+                                    quality={85}
+                                    sizes="300px"
+                                />
+                            </div>
                         ))}
                         <div className="w-1 h-[60vh] pr-2 flex-shrink-0" />
                     </div>
                 </div>
-                <ProgressBar />
+                {/* <ProgressBar /> */}
                 <div className="mt-4 text-center text-gray-500 text-sm">
                     <div className="flex items-center justify-center gap-2">
                         <span>←</span>
